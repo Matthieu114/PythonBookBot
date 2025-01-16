@@ -21,12 +21,14 @@ def count_characters(text : str) -> int:
     # print(Counter(f"{concat_text}\n"))
     return char_count
 
-
 def main():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
         words_count = count_words(file_contents)
         char_count = count_characters(file_contents)
 
-
+        print(f"--- Begin report of books/frankenstein.txt ---\n")
+        print(f"{words_count} found in the document\n")
+        for char in char_count:
+            print(f"the '{char}' character was found {char_count[char]} times\n")
 main()
